@@ -191,7 +191,7 @@ class Message(BaseMessage):
     def _setattr(self, name, value):
         if name == 'type':
             raise AttributeError('type attribute is read only')
-        else:
+        elif name in vars(self):
             check_value(name, value)
             if name == 'data':
                 vars(self)['data'] = SysexData(value)
