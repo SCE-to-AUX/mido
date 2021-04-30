@@ -197,6 +197,8 @@ class Message(BaseMessage):
                 vars(self)['data'] = SysexData(value)
             else:
                 vars(self)[name] = value
+        else:
+            vars(self)[name] = value
 
     __setattr__ = _setattr
 
