@@ -92,8 +92,5 @@ def check_msgdict(msgdict):
         raise ValueError('unknown message type {!r}'.format(msgdict['type']))
 
     for name, value in msgdict.items():
-        if name not in spec['attribute_names']:
-            raise ValueError(
-                '{} message has no attribute {}'.format(spec['type'], name))
 
         check_value(name, value)
